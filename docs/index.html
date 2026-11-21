@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-app="form-surface">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <title>Inspect form fields and labels | Form Surface</title>
 <meta name="description" content="Paste HTML to inventory controls, accessible labels, required fields, and duplicate IDs without executing the markup.">
 <link rel="canonical" href="https://musabukhari237.github.io/form-surface/">
@@ -17,18 +17,22 @@
 <link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="app.css">
 <script src="app.mjs" type="module"></script>
+  <script type="module" src="experience.mjs"></script>
+  <script type="module" src="experience.mjs"></script>
 </head>
 <body>
-<header><a class="brand" href="./"><img src="logo.svg" alt="">Form Surface</a><a class="repo" href="https://github.com/MusaBukhari237/form-surface">Source on GitHub</a></header>
+<a class="skip" href="#workspace">Skip to workspace</a>
+<header><a class="brand" href="./"><img src="logo.svg" alt="">Form Surface</a><nav aria-label="Main"><a href="#guide">How to use</a><a class="repo" href="https://github.com/MusaBukhari237/form-surface">GitHub ↗</a></nav></header>
 <main>
-<section class="hero"><h1>Inspect form fields and labels</h1><p>Paste HTML to inventory controls, accessible labels, required fields, and duplicate IDs without executing the markup.</p></section>
-<div class="workspace">
-<section class="panel input" aria-labelledby="settings"><h2 id="settings">Settings</h2>
+<section class="masthead"><div class="intro"><p class="category">Form inspection</p><h1>Give every field a voice.</h1><p class="description">Inspect form controls, labels, required fields, and duplicate IDs from an HTML snippet.</p></div><figure class="scene diagram"><img src="scene.svg" alt="Form inspection process illustration" width="440" height="260"></figure></section>
+<div class="workspace" id="workspace">
+<section class="panel input" aria-labelledby="settings"><h2 id="settings">HTML source</h2>
 <div class="fields"><label class="wide">HTML snippet<textarea id="markup" placeholder="&lt;label&gt;Email &lt;input name=&quot;email&quot;&gt;&lt;/label&gt;" maxlength="100000" spellcheck="false" rows="6"></textarea></label></div><div class="actions"><button type="button" id="run">Inspect fields</button><button type="button" class="quiet" id="example">Load example</button></div><p class="note">The snippet is parsed in an inert template. Results show text and never render your supplied markup.</p>
 </section>
-<section class="panel output" aria-labelledby="output"><h2 id="output">Result</h2><div class="result" id="result" aria-live="polite">Load the example or enter your own input.</div></section>
+<section class="panel output" aria-labelledby="output" id="output-panel"><h2 id="output" tabindex="-1">Field inventory</h2><p class="result-status" id="result-status" aria-live="polite">Ready when you are</p><div class="result" id="result" aria-live="polite">Load the example or enter your own input.</div></section>
 </div>
+<details class="guide" id="guide"><summary>How to use Form Surface</summary><ol><li>Paste an HTML snippet or load the form example.</li><li>Inspect the fields and their accessible labels.</li><li>Review missing labels and duplicated IDs in the inventory.</li></ol></details>
 </main>
-<footer>Open-source browser tool · <a href="https://github.com/MusaBukhari237/form-surface/blob/HEAD/LICENSE">MIT license</a></footer>
+<footer><span>Form Surface · <a href="https://github.com/MusaBukhari237/form-surface/blob/main/LICENSE">MIT licensed</a></span><span class="credits"><a href="https://www.leadceleris.com/">LeadCeleris</a><a href="https://www.aifficiento.biz/">AIFFICIENTO</a></span></footer>
 </body>
 </html>
